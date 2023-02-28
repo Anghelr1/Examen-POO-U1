@@ -24,7 +24,7 @@
       <Spinner fx:id="txt_rect_altura" layoutX="157.0" layoutY="213.0" prefHeight="25.0" prefWidth="87.0" />
       <Label layoutX="485.0" layoutY="127.0" text="Base:" />
       <Spinner fx:id="txt_trian_base" layoutX="485.0" layoutY="152.0" prefHeight="25.0" prefWidth="87.0" />
-      <Button layoutX="498.0" layoutY="248.0" mnemonicParsing="false" text="Calcular" />
+      <Button layoutX="498.0" layoutY="248.0" mnemonicParsing="false" onAction="#triangulo" text="Calcular" />
       <Label fx:id="lb_triangulo_area" layoutX="499.0" layoutY="291.0" text="Area:" />
       <Label fx:id="lb_triangulo_perimetro" layoutX="472.0" layoutY="308.0" text="Perímetro:" />
       <Label layoutX="483.0" layoutY="188.0" text="Altura:" />
@@ -35,5 +35,6 @@
       <Label fx:id="lb_circulo_area" layoutX="376.0" layoutY="232.0" text="Area:" />
       <Label fx:id="lb_circulo_perimetro" layoutX="349.0" layoutY="249.0" text="Perímetro:" />
       <Label fx:id="lb_triangulo_hipotenusa" layoutX="462.0" layoutY="325.0" text="Hipotenusa:" />
+      <Label fx:id="lb_triangulo_tipo" layoutX="462.0" layoutY="342.0" text="Tipo:" />
    </children>
 </AnchorPane>

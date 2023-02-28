@@ -70,6 +70,33 @@ public class MainController implements Initializable {
         });
         //FIN CIRCULO
 
+        //RECTANGULO
+        SpinnerValueFactory.IntegerSpinnerValueFactory valueFactoryTrianguloBase =
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
+        SpinnerValueFactory.IntegerSpinnerValueFactory valueFactoryTrianguloAltura =
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
+
+        valueFactoryTrianguloBase.setValue(1);
+        valueFactoryTrianguloAltura.setValue(1);
+        txt_trian_base.setValueFactory(valueFactoryTrianguloBase);
+        txt_trian_altura.setValueFactory(valueFactoryTrianguloAltura);
+        valor_txt_triangulo_base = txt_trian_base.getValue();
+        valor_txt_triangulo_altura = txt_trian_altura.getValue();
+        txt_trian_base.valueProperty().addListener(new ChangeListener<Integer>() {
+            @Override
+            public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
+                valor_txt_triangulo_base = txt_trian_base.getValue();
+            }
+        });
+
+        txt_trian_altura.valueProperty().addListener(new ChangeListener<Integer>() {
+            @Override
+            public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
+                valor_txt_triangulo_altura = txt_trian_altura.getValue();
+            }
+        });
+        //FIN RECTANGULO
+
 
 
     }
@@ -124,6 +151,31 @@ public class MainController implements Initializable {
         lb_circulo_perimetro.setText("Perímetro: " + circulo.perimetro());
     }
     // FIN CIRCULO
+
+    //TRIANGULO
+    @FXML
+    private Spinner<Integer> txt_trian_base;
+    @FXML
+    private Spinner<Integer> txt_trian_altura;
+    @FXML
+    private Label lb_triangulo_area;
+    @FXML
+    private Label lb_triangulo_perimetro;
+    @FXML
+    private Label lb_triangulo_hipotenusa;
+    @FXML
+    private Label lb_triangulo_tipo;
+    private float valor_txt_triangulo_base;
+    private float valor_txt_triangulo_altura;
+
+    public void triangulo(){
+        Triangulo triangulo = new Triangulo(valor_txt_triangulo_base,valor_txt_triangulo_altura);
+        lb_triangulo_area.setText("Area: " + triangulo.area());
+        lb_triangulo_perimetro.setText("Perímetro: " + triangulo.perimetro());
+        lb_triangulo_hipotenusa.setText("Hipotenusa: " + triangulo.hipotenusa());
+        lb_triangulo_tipo.setText("Tipo: " + triangulo.tipo());
+    }
+    // FIN TRIANGULO
 
 
 
