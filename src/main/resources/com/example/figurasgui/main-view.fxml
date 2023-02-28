@@ -31,7 +31,7 @@
       <Spinner fx:id="txt_trian_altura" layoutX="483.0" layoutY="213.0" prefHeight="25.0" prefWidth="87.0" />
       <Label layoutX="360.0" layoutY="128.0" text="Radio:" />
       <Spinner fx:id="txt_circ_radio" layoutX="360.0" layoutY="153.0" prefHeight="25.0" prefWidth="87.0" />
-      <Button layoutX="375.0" layoutY="189.0" mnemonicParsing="false" text="Calcular" />
+      <Button layoutX="375.0" layoutY="189.0" mnemonicParsing="false" onAction="#circulo" text="Calcular" />
       <Label fx:id="lb_circulo_area" layoutX="376.0" layoutY="232.0" text="Area:" />
       <Label fx:id="lb_circulo_perimetro" layoutX="349.0" layoutY="249.0" text="Perímetro:" />
       <Label fx:id="lb_triangulo_hipotenusa" layoutX="462.0" layoutY="325.0" text="Hipotenusa:" />

@@ -54,7 +54,21 @@ public class MainController implements Initializable {
                 valor_txt_rectangulo_altura = txt_rect_altura.getValue();
             }
         });
-        //FIN CUADRADO
+        //FIN RECTANGULO
+
+        //CIRCULO
+        SpinnerValueFactory.IntegerSpinnerValueFactory valueFactoryCirculo =
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
+        valueFactoryCirculo.setValue(1);
+        txt_circ_radio.setValueFactory(valueFactoryCirculo);
+        valor_txt_circulo = txt_circ_radio.getValue();
+        txt_circ_radio.valueProperty().addListener(new ChangeListener<Integer>() {
+            @Override
+            public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
+                valor_txt_circulo = txt_circ_radio.getValue();
+            }
+        });
+        //FIN CIRCULO
 
 
 
@@ -94,6 +108,22 @@ public class MainController implements Initializable {
         lb_rectangulo_perimetro.setText("Perímetro: " + rectangulo.perimetro());
     }
     // FIN RECTANGULO
+
+    //CIRCULO
+    @FXML
+    private Spinner<Integer> txt_circ_radio;
+    @FXML
+    private Label lb_circulo_area;
+    @FXML
+    private Label lb_circulo_perimetro;
+    private float valor_txt_circulo;
+
+    public void circulo(){
+        Circulo circulo = new Circulo(valor_txt_circulo);
+        lb_circulo_area.setText("Area: " + circulo.area());
+        lb_circulo_perimetro.setText("Perímetro: " + circulo.perimetro());
+    }
+    // FIN CIRCULO
 
 
 
